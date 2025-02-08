@@ -18,6 +18,12 @@ int main()
     {
         cin >> candidatos[i].nota >> candidatos[i].id;
     }
+    
+    sort(candidatos.begin(), candidatos.end(), [](Candidato a, Candidato b) {
+        if (a.nota == b.nota) return a.id < b.id;
+        return a.nota > b.nota;
+    });
+
     int num_queries;
     cin >> num_queries;
     for (int i = 0; i < num_queries; i++)
